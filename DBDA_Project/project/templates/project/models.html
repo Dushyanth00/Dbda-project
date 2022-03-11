@@ -1,0 +1,17 @@
+{% extends 'project/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+{% block content %}
+<div class = 'container'>
+    <h1>{% block title %} Your Models {% endblock %}</h1>
+</div>
+<div class = "container">
+<div class="mb-3">
+  <label for="formFileMultiple" class="form-label">Upload your model here</label>
+  <input class="form-control" type="file" id="formFileMultiple" multiple>
+</div>
+</div>
+
+{% endblock %}

@@ -23,10 +23,16 @@ def register(request):
 	return render(request, 'project/register.html', {'form': form})
 
 
+
 @login_required()
 def profile(request):
 	return render(request, 'project/profile.html')
 
 
+
 def settings(request):
 	return render(request, 'project/settings.html')
+
+
+def models(request):
+	return render(request, 'project/models.html')
