@@ -1,5 +1,8 @@
 {% extends 'project/base.html' %}
+{% load crispy_forms_tags %}
 {% load static %}
+
+
 {% block content %}
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
 <!--<div class = "container">
@@ -11,6 +14,10 @@
 </div>
 </div> -->
 <div class = "container">
+    <fieldset class="form-group">
+          <legend class="border-bottom mb-4" style="color: white;">Home</legend>
+          {{ form|crispy }}
+      </fieldset>
     <div class="card">
         <div class="card-header">
             DBDA-Project
@@ -24,13 +31,16 @@
 </div>
 </div>
 <br>
+<center>
 <div class = "container">
 <div class="card" style="width: 20rem;">
-  <img class="card-img-top" src="{% static 'images/bg.png' %}" alt="Card image cap">
+  <img class="card-img-top" src="{% static 'images/metadata.png' %}" alt="Card image cap">
     <h5 class="card-title">Introduction to Metadata</h5>
   <div class="card-body">
     <p class="card-text">The metadata model is a business presentation of the information provided by the ATG data warehouse. The model is used by business users and report creators, rather than working directly with the database.</p>
   </div>
+</div>
+</center>
 </div>
 
 <!-- <div class="card" style="width: 18rem;">

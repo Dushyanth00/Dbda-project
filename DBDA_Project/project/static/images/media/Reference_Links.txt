@@ -1,0 +1,7 @@
+# BootStrap Link
+https://getbootstrap.com/docs/5.1/getting-started/introduction/
+
+#Upload file link
+https://docs.djangoproject.com/en/4.0/topics/http/file-uploads/
+
+#

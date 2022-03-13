@@ -12,6 +12,5 @@ urlpatterns = [
     path('login/', auth_view.LoginView.as_view(template_name = 'project\login.html'), name = 'Login'),
     path('logout/', auth_view.LogoutView.as_view(template_name = 'project\logout.html'), name='Logout'),
     path('models/', views.models, name = 'Models'),
+    path('search/', views.searchbar, name = 'SearchBar'),
 ]
-
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

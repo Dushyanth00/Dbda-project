@@ -1,0 +1,14 @@
+{% extends 'project/base.html' %}
+
+{% block content %}
+{% if searched %}
+<center>
+    <h2>You searched for "{{searched}}"</h2>
+    <br/>
+</center>
+{% else %}
+<center>
+<h2>Enter to search</h2>
+</center>
+{% endif %}
+{% endblock %}

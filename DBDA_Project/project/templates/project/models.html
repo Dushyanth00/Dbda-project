@@ -4,14 +4,58 @@
 
 
 {% block content %}
-<div class = 'container'>
-    <h1>{% block title %} Your Models {% endblock %}</h1>
-</div>
 <div class = "container">
-<div class="mb-3">
-  <label for="formFileMultiple" class="form-label">Upload your model here</label>
-  <input class="form-control" type="file" id="formFileMultiple" multiple>
-</div>
+<fieldset class="form-group">
+          <legend class="border-bottom mb-4" style="color: white;">Models</legend>
+          {{ form|crispy }}
+      </fieldset>
+<br>
+    <div class="card">
+  <div class="card-body">
+   <fieldset class="form-group">
+          <legend class="border-bottom mb-4" style="color: black;">Upload</legend>
+          {{ form|crispy }}
+      </fieldset>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="document">
+        <button type="submit">Upload Files</button>
+    </form>
+  </div>
 </div>
 
+<br>
+
+{% if user.is_authenticated %}
+<!-- <div class="mb-3">
+    <label for="formFileMultiple" class="form-label">Upload your model here</label>
+  <input class="form-control" type="file" id="formFileMultiple" multiple><br>
+    <button type="submit">Upload</button> -->
+    <br>
+    {% for post in file %}
+    <h2>{{post.title}}</h2>
+    <a href="{{post.adminupload.url}}" download="{{post.adminupload.url}}">Download</a>
+    {% endfor %}
+</div>
+
+{% else %}
+<div class="alert alert-success" role="alert">
+  You are not logged in to our account. <a href="{% url 'Login' %}" class="alert-link">Sign in</a> to view.
+</div>
+</div>
+</div>
+{% endif %}
 {% endblock %}
+
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+{% for post in file %}
+    <h2>{{post.title}}</h2>
+    <a href="{{post.adminupload.url}}" download="{{post.adminupload.url}}">Download</a>
+    {% endfor %}
+</body>
+</html> -->

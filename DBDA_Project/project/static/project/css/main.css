@@ -316,7 +316,7 @@ vertical-align: bottom;
 h1,
 h2 {
 font-weight: 300;
-color: rgba(0,0,0,1);
+color: rgba(255,255,255,255);
 }
 .heading--primary {font-size: 1.999rem;}
 .heading--secondary {font-size: 1.414rem;}
@@ -332,12 +332,11 @@ color: #fff;
 }
 .signup__form {
 padding: 2.5rem;
-background: #fafafa;
+background: #e21212;
 }
 label {
-font-size: .85rem;
-text-transform: uppercase;
-color: #981010;
+font-size: 1.1rem;
+color: #d71818;
 }
 .form-control {
 background-color: transparent;

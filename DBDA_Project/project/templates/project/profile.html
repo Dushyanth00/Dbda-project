@@ -4,20 +4,35 @@
 {% block content %}
 {% if user.is_authenticated %}
 <div class = 'container'>
-    <h2>{% block title %} Profile {% endblock %}</h2>
+    <fieldset class="form-group">
+          <legend class="border-bottom mb-4" style="color: white;">Profile</legend>
+          {{ form|crispy }}
+      </fieldset>
 </div>
 <br>
     <div class = 'container'>
-        <div class="hstack gap-3">
-  <h5>First Name: </h5><div class="bg-light border">{{user.first_name}}</div><br>
-  <h5>Last Name: </h5><div class="bg-light border ms-auto">{{user.last_name}}</div><br>
-  <div class="vr"></div>
-  <h5>Username: </h5><div class="bg-light border">{{user.username}}</div><br>
-  <h5>Email: </h5><div class="bg-light border">{{user.email}}</div>
-</div>
-</div>
+        <div class="col-md-6">
+            <label for="first_name" class="form-label">First Name</label>
+            <input class="form-control" id="first_name" type="text" value="{{user.first_name}}" aria-label="readonly input example" readonly>
+        </div><br>
+        <div class="col-md-6">
+            <label for="last_name" class="form-label">Last Name</label>
+            <input class="form-control" id="last_name" type="text" value="{{user.last_name}}" aria-label="readonly input example" readonly>
+        </div><br>
+        <div class="col-md-6">
+            <label for="username" class="form-label">Username</label>
+            <input class="form-control" id="username" type="text" value="{{user.username}}" aria-label="readonly input example" readonly>
+        </div><br>
+        <div class="col-md-6">
+            <label for="email" class="form-label">Email ID</label>
+            <input class="form-control" id="email" type="text" value="{{user.email}}" aria-label="readonly input example" readonly>
+        </div><br>
+
+    </div>
 
 {% else %}
-<p>Login to view your details</p>
+<div class="alert alert-success" role="alert">
+  You are not logged in to our account. <a href="{% url 'Login' %}" class="alert-link">Sign in</a> to view.
+</div>
 {% endif %}
 {% endblock %}

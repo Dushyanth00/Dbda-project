@@ -3,7 +3,11 @@
 
 {% block content %}
     <div class = "container">
-        <h1>You have been successfully logged out</h1>
-        <h5><a href="{% url 'Login' %}">Sign In again?</a></h5>
+        <fieldset class="form-group">
+          <legend class="border-bottom mb-4" style="color: white;">Logout</legend>
+          {{ form|crispy }}
+      </fieldset>
+        <h1> Thankyou for visiting our website </h1>
+        <p><a href="{% url 'Login' %}">Jump back in?</a></p>
     </div>
 {% endblock %}
